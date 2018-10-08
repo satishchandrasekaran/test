@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "eabd203e-ace6-eaaf-893a-e604d3f36ae0",
+		"name": "Typidcode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://jsonplaceholder.typicode.com/users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "086a24aa-5272-423e-988e-94efd1fa99bf",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"var companyName=[];",
+							"var groupCompany=\"\";",
+							"var jsonArray = pm.response.json();",
+							" pm.test('Return the Company name ending with Group. ', function(){",
+							"        _.each(jsonArray, (arrItem) => {",
+							"            groupCompany=arrItem.company.name",
+							"            if(groupCompany.has(\"Group\")){",
+							"                companyName.push(groupCompany);",
+							"            }",
+							"        }",
+							"        );",
+							"console.log(companyName.toString());",
+							"",
+							" });",
+							" ",
+							" ",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://jsonplaceholder.typicode.com/users",
+					"protocol": "http",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
