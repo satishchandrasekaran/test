@@ -1,0 +1,14 @@
+payment-service/target/
+*.iml
+TEST_RUNS/
+payment-information-proxy/target/
+target/
+null
+.idea/*
+payment-service/target/*
+testCardIssuerOutput.csv
+binbase.csv
+payment-service/src/main/resources/serviceconfig.ini
+payment-service/downloaded_rGuestPayAgents/
+binbase.zip
+.DS_Store
